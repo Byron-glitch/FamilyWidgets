@@ -3,6 +3,7 @@
           package="com.example.familywidgets">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -10,6 +11,16 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.FamilyWidgets">
+        <activity
+                android:name=".Activity_ten"
+                android:exported="true"/>
+        <activity
+                android:name=".Activity_nine"
+                android:exported="true"/>
+        <activity
+                android:name=".Activity_eight"
+                android:exported="true"/>
+        <activity android:name=".MainActivity">
         <activity android:name=".MainActivity"/>
         <activity android:name=".Activity_second"/>
         <activity android:name=".Activity_three"/>
