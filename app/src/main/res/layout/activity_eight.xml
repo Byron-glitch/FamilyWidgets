@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity_eight" android:id="@+id/btn">
+
+    <Button
+            android:text="Min-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnMinDisminuir2"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinAumentar2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp" app:layout_constraintEnd_toStartOf="@+id/btnMaxDisminuir2"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/ratingBar"/>
+    <Button
+            android:text="Min +"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnMinAumentar2"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_Discrete" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp" app:layout_constraintEnd_toStartOf="@+id/btnMaxAumentar2"
+            android:layout_marginEnd="179dp" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnMinDisminuir2"/>
+    <Button
+            android:text="Max+"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnMaxAumentar2"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_Discrete" android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnMinAumentar2" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnMaxDisminuir2" android:layout_marginTop="16dp"/>
+    <Button
+            android:text="MAX-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnMaxDisminuir2"
+            app:layout_constraintTop_toBottomOf="@+id/btnMaxAumentar2" android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="179dp"
+            app:layout_constraintStart_toEndOf="@+id/btnMinDisminuir2" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"/>
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:minHeight="0dp"
+            android:maxHeight="400dp"
+            android:numStars="6"
+            android:rating="3"
+            android:stepSize="1"
+            android:layout_height="wrap_content" android:id="@+id/ratingBar"
+            android:progressTint="#F9A825"
+            android:isIndicator="false"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinDisminuir2" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnDisminuirEstrellas"/>
+    <Button
+            android:text="Estrellas -"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnDisminuirEstrellas"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            android:layout_marginEnd="61dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnAumentarEstrellas"
+            app:layout_constraintBottom_toTopOf="@+id/btnEstado"
+            android:layout_marginBottom="16dp"/>
+    <Button
+            android:text="Habilitar / Inhabilitar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnEstado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDisminuirEstrellas"
+            android:layout_marginBottom="49dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnThirdNext"/>
+    <Button
+            android:text="Estrellas +"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAumentarEstrellas"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="61dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnDisminuirEstrellas"
+            android:layout_marginEnd="29dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnEstado"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"/>
+    <SeekBar
+            android:id="@+id/seekbar_Discrete"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="20"
+            android:progress="0"
+            android:progressTint="#1A237E"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSeekBarDiscrete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnMinAumentar2"/>
+    <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewSeekBarDiscrete"
+            android:textAlignment="center" android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinDisminuir"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/seekbar_Discrete"/>
+    <SeekBar
+            android:id="@+id/seekbar_Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="0"
+            android:max="10"
+            android:progressTint="#FF5722"
+            android:thumb="@android:drawable/btn_radio"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnMinAumentar"/>
+    <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewSeekBar"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/seekbar_Normal"/>
+    <Button
+            android:text="Min +"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMinAumentar"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_Normal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnMaxAumentar"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnMinDisminuir"/>
+    <Button
+            android:text="Min-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMinDisminuir"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinAumentar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSeekBarDiscrete"
+            app:layout_constraintEnd_toStartOf="@+id/btnMaxDisminuir"
+            android:layout_marginEnd="179dp"/>
+    <Button
+            android:text="Max+"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMaxAumentar"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_Normal"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="179dp"
+            app:layout_constraintStart_toEndOf="@+id/btnMinAumentar"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnMaxDisminuir"
+            android:layout_marginTop="16dp"/>
+    <Button
+            android:text="MAX-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMaxDisminuir"
+            app:layout_constraintTop_toBottomOf="@+id/btnMaxAumentar"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSeekBarDiscrete"
+            app:layout_constraintStart_toEndOf="@+id/btnMinDisminuir"/>
+    <Button
+            android:text="Siguiente Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnThirdNext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEstado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
