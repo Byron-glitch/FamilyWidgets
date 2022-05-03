@@ -1,6 +1,7 @@
 package com.example.familywidgets
 
 import android.content.Intent
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
@@ -9,13 +10,10 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.WebView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import android.webkit.WebChromeClient
 import android.webkit.WebViewClient
-import android.widget.Button
-import android.widget.EditText
-import android.widget.VideoView
+import android.widget.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +25,34 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val imageView = findViewById<ImageView>(R.id.imageView)
+
+        val btn_increase_size = findViewById<Button>(R.id.btn_increase_size)
+        btn_increase_size.setOnClickListener {
+            Toast.makeText(applicationContext, imageView.height.toString() + " " + imageView.width.toString(), Toast.LENGTH_LONG).show()
+            imageView.getLayoutParams().height =  215; //can change the size according to you requirements
+            imageView.getLayoutParams().width = 215; //--
+            imageView.requestLayout()
+        }
+
+        val btn_decrease_size = findViewById<Button>(R.id.btn_decrease_size)
+        btn_decrease_size.setOnClickListener {
+            Toast.makeText(applicationContext, imageView.height.toString() + " " + imageView.width.toString(), Toast.LENGTH_LONG).show()
+            imageView.getLayoutParams().height =  100; //can change the size according to you requirements
+            imageView.getLayoutParams().width = 100; //--
+            imageView.requestLayout()
+        }
+
+        val btn_image_1 = findViewById<Button>(R.id.btn_image_1)
+        btn_image_1.setOnClickListener {
+            imageView.setBackgroundResource(R.drawable.ic_launcher_background)
+        }
+
+        val btn_image_2 = findViewById<Button>(R.id.btn_image_2)
+        btn_image_2.setOnClickListener {
+            imageView.setBackgroundResource(R.drawable.ic_launcher_foreground)
+        }
 
 
         // ------------------INICIALIZACION DEL WEB VIEW
@@ -76,12 +102,6 @@ class MainActivity : AppCompatActivity() {
 
 
         //------------------INICIALIZACION BOTON-------------------
-        var btn_next = findViewById<Button>(R.id.btn_next)
-
-        btn_next.setOnClickListener {
-            val intent = Intent(this, Activity_second::class.java)
-            startActivity(intent)
-        }
 
     }
 

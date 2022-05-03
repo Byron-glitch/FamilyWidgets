@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="328dp"
+            android:layout_height="22dp"
+            android:id="@+id/progressBarHorizontal"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.11"/>
+    <Button
+            android:text="-10 progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_menos_10"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarHorizontal"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="40dp"
+            android:backgroundTint="#CD1010"/>
+    <Button
+            android:text="+10 progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_mas_10"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarHorizontal" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="#2CCD10"/>
+    <Button
+            android:text="Esconder"
+            android:layout_width="120dp"
+            android:layout_height="50dp" android:id="@+id/btn_enconderHorizontal"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="40dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="196dp"
+            android:backgroundTint="#CD1010"/>
+    <Button
+            android:text="Mostrar"
+            android:layout_width="120dp"
+            android:layout_height="50dp" android:id="@+id/btn_mostrarHorizontal"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="196dp" android:layout_marginEnd="40dp"
+            android:backgroundTint="#2CCD10"/>
+    <TextView
+            android:text="PROGRESS BAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/lbl_progressbar"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="28dp"
+            android:textSize="20dp"/>
+    <TextView
+            android:text="VIDEO VIEW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/lbl_videoView"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="300dp"
+            android:textSize="20dp"/>
+    <VideoView
+            android:layout_width="385dp"
+            android:layout_height="196dp" android:id="@+id/videoView"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_videoView"
+            android:layout_marginTop="12dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:accessibilityPaneTitle="Video Prueba"
+            android:accessibilityLiveRegion="@integer/material_motion_duration_long_1"/>
+    <Button
+            android:text="Pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_pauseVideo"
+            app:layout_constraintTop_toBottomOf="@+id/videoView"
+            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.142"/>
+    <Button
+            android:text="Start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_startVideo"
+            app:layout_constraintTop_toBottomOf="@+id/videoView"
+            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.854"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,13 +21,16 @@
                 android:name=".Activity_eight"
                 android:exported="true"/>
         <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Activity_second"/>
+        <activity android:name=".Activity_three"/>
+        <activity android:name=".Activity_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_second"/>
     </application>
 
 </manifest>

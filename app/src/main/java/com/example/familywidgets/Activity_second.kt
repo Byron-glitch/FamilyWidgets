@@ -1,9 +1,12 @@
 package com.example.familywidgets
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.CalendarView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +37,19 @@ class Activity_second: AppCompatActivity() {
             )
             calendarView.date = calendar.timeInMillis
         }
+
+        val progress_bar  = findViewById<ProgressBar>(R.id.progressBar)
+
+        val btn_esconder = findViewById<Button>(R.id.btn_esconder)
+        btn_esconder.setOnClickListener {
+            progress_bar.visibility = View.INVISIBLE
+        }
+
+        val btn_mostrar = findViewById<Button>(R.id.btn_mostrar)
+        btn_mostrar.setOnClickListener {
+            progress_bar.visibility = View.VISIBLE
+        }
+
 
     }
 
