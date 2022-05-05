@@ -26,33 +26,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val imageView = findViewById<ImageView>(R.id.imageView)
 
-        val btn_increase_size = findViewById<Button>(R.id.btn_increase_size)
-        btn_increase_size.setOnClickListener {
-            Toast.makeText(applicationContext, imageView.height.toString() + " " + imageView.width.toString(), Toast.LENGTH_LONG).show()
-            imageView.getLayoutParams().height =  215; //can change the size according to you requirements
-            imageView.getLayoutParams().width = 215; //--
-            imageView.requestLayout()
-        }
-
-        val btn_decrease_size = findViewById<Button>(R.id.btn_decrease_size)
-        btn_decrease_size.setOnClickListener {
-            Toast.makeText(applicationContext, imageView.height.toString() + " " + imageView.width.toString(), Toast.LENGTH_LONG).show()
-            imageView.getLayoutParams().height =  100; //can change the size according to you requirements
-            imageView.getLayoutParams().width = 100; //--
-            imageView.requestLayout()
-        }
-
-        val btn_image_1 = findViewById<Button>(R.id.btn_image_1)
-        btn_image_1.setOnClickListener {
-            imageView.setBackgroundResource(R.drawable.ic_launcher_background)
-        }
-
-        val btn_image_2 = findViewById<Button>(R.id.btn_image_2)
-        btn_image_2.setOnClickListener {
-            imageView.setBackgroundResource(R.drawable.ic_launcher_foreground)
-        }
+        val progress_bar  = findViewById<ProgressBar>(R.id.progressBar)
+        progress_bar.visibility = View.VISIBLE
 
 
         // ------------------INICIALIZACION DEL WEB VIEW
@@ -64,8 +40,10 @@ class MainActivity : AppCompatActivity() {
         val settings = webView.settings
         settings.javaScriptEnabled = true
         webView.loadUrl(URL)
+        progress_bar.visibility = View.INVISIBLE
 
-        val btn_pause = findViewById<Button>(R.id.btn_pause)
+
+        val btn_pause = findViewById<Button>(R.id.btn_pauseWeb)
         btn_pause.setOnClickListener {
             webView.onPause()
         }
@@ -98,17 +76,11 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
-        //------------------INICIALIZACION VIDEO VIEW--------------
 
 
-        //------------------INICIALIZACION BOTON-------------------
 
     }
 
-    fun do_onclickImage(view: View) {
-        Toast.makeText(applicationContext,"METHODO ON CLICK (IMAGE_VIEW)",Toast.LENGTH_SHORT).show()
-
-    }
 
 
 }
