@@ -20,10 +20,9 @@
         <activity
                 android:name=".Activity_eight"
                 android:exported="true"/>
-        <activity android:name=".MainActivity">
         <activity android:name=".MainActivity"/>
         <activity android:name=".Activity_second"/>
-        <activity android:name=".Activity_three"/>
+        <activity android:name=".Activity_gallery"/>
         <activity android:name=".Activity_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.CalendarView
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
 import java.util.*
 
 class Activity_second: AppCompatActivity() {
@@ -18,36 +18,45 @@ class Activity_second: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        //------------------------INICIALIZACION CALENDAR VIEW
+        //-------------------------------CALENDAR VIEW----------------------------------------
 
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            Toast.makeText(applicationContext, "$dayOfMonth/$month/$year", Toast.LENGTH_LONG).show()
+            when ("$dayOfMonth/$month/$year") {
+                "16/4/2022" ->  Toast.makeText(applicationContext, "Ingreso a clases", Toast.LENGTH_LONG).show()
+                "20/4/2022" -> Toast.makeText(applicationContext, "Día final de pago de matrícula", Toast.LENGTH_LONG).show()
+                else -> { // Note the block
+                    Toast.makeText(applicationContext, "No hay nada programado para esa fecha", Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         val btn_setDate = findViewById<Button>(R.id.btn_setDate)
         btn_setDate.setOnClickListener {
             val calendar = Calendar.getInstance()
+            val myLdt = LocalDateTime.now()
+
             calendar.set(
-                1951,
+                myLdt.year,
 
-                2,
+                myLdt.monthValue - 1,
 
-                31
+                myLdt.dayOfMonth
             )
             calendarView.date = calendar.timeInMillis
         }
 
-        val progress_bar  = findViewById<ProgressBar>(R.id.progressBar)
+        //------------------------------------PROGRESS BAR HORIZONTAL------------------------------------
+        val progressBarHorizontal = findViewById<ProgressBar>(R.id.progressBarHorizontalMatricula)
+        progressBarHorizontal.setProgress(0, true)
+        progressBarHorizontal.max = 180000
 
-        val btn_esconder = findViewById<Button>(R.id.btn_esconder)
-        btn_esconder.setOnClickListener {
-            progress_bar.visibility = View.INVISIBLE
-        }
-
-        val btn_mostrar = findViewById<Button>(R.id.btn_mostrar)
-        btn_mostrar.setOnClickListener {
-            progress_bar.visibility = View.VISIBLE
+        val txt_monto = findViewById<EditText>(R.id.txt_monto)
+        txt_monto.doAfterTextChanged {
+            if(!txt_monto.text.toString().equals(""))
+                if(txt_monto.text.toString().toInt() <= 180000)
+                    progressBarHorizontal.setProgress(txt_monto.text.toString().toInt())
+                else Toast.makeText(applicationContext, "Monto a pagar excedido", Toast.LENGTH_LONG).show()
         }
 
 
