@@ -19,7 +19,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private val URL = "https://www.una.ac.cr/"
-
+    private lateinit var progress_bar : ProgressBar
+    private lateinit var webView : WebView
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,12 +28,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val progress_bar  = findViewById<ProgressBar>(R.id.progressBar)
-        progress_bar.visibility = View.VISIBLE
+        progress_bar  = findViewById<ProgressBar>(R.id.progressBar)
 
 
         // ------------------INICIALIZACION DEL WEB VIEW
-        val webView  = findViewById<WebView>(R.id.webView)
+        webView  = findViewById<WebView>(R.id.webView)
         webView.webChromeClient = object : WebChromeClient(){
         }
         webView.webViewClient = object : WebViewClient(){
@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         val settings = webView.settings
         settings.javaScriptEnabled = true
         webView.loadUrl(URL)
-        progress_bar.visibility = View.INVISIBLE
 
 
         val btn_pause = findViewById<Button>(R.id.btn_pauseWeb)
@@ -77,9 +76,24 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
-
     }
+
+    open inner class WebViewClient : android.webkit.WebViewClient() {
+
+        // Load the URL
+        override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+            view.loadUrl(url)
+            return false
+        }
+
+        // ProgressBar will disappear once page is loaded
+        override fun onPageFinished(view: WebView, url: String) {
+            super.onPageFinished(view, url)
+            progress_bar.visibility = View.GONE
+        }
+    }
+
+
 
 
 
