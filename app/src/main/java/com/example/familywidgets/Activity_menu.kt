@@ -1,19 +1,19 @@
 package com.example.familywidgets
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
-import android.widget.VideoView
+import android.util.Log
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 class Activity_menu : AppCompatActivity() {
 
     var stopPosition : Int = 0
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +47,7 @@ class Activity_menu : AppCompatActivity() {
         videoView.start()
 
 
+
         val btn_pause = findViewById<Button>(R.id.btn_pause)
         btn_pause.setOnClickListener {
             stopPosition = videoView.currentPosition
@@ -55,10 +56,33 @@ class Activity_menu : AppCompatActivity() {
 
         val btn_start = findViewById<Button>(R.id.btn_play)
             btn_start.setOnClickListener {
-            Toast.makeText(applicationContext, videoView.currentPosition.toString(), Toast.LENGTH_LONG).show()
-            videoView.seekTo(videoView.currentPosition * 3)
             videoView.start()
         }
+
+        //---------------------------------SEEKBAR NORMAL-----------------------------------------------------
+        val seekBarNormal= findViewById<SeekBar>(R.id.seekbar_video)
+        seekBarNormal.min = 0
+        videoView.setOnPreparedListener { mp ->
+            mp.isLooping = true
+            seekBarNormal.max = videoView.duration
+        }
+
+        videoView.start()
+
+        seekBarNormal?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int,
+                                           fromUser: Boolean) {
+                videoView.seekTo(progress)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+            }
+        })
+
+
     }
 
     override fun onStart() {

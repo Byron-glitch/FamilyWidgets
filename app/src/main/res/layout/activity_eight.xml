@@ -110,7 +110,7 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/seekbar_Discrete"/>
     <SeekBar
-            android:id="@+id/seekbar_Normal"
+            android:id="@+id/seekbar_video"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progress="0"
@@ -134,13 +134,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/seekbar_Normal"/>
+            app:layout_constraintBottom_toTopOf="@+id/seekbar_video"/>
     <Button
             android:text="Min +"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMinAumentar"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_Normal"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_video"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="28dp"
             app:layout_constraintEnd_toStartOf="@+id/btnMaxAumentar"
@@ -163,7 +163,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMaxAumentar"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_Normal"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_video"
             android:layout_marginEnd="28dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="179dp"

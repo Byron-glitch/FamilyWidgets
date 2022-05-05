@@ -14,7 +14,7 @@ class Activity_eight : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eight)
 
-        val seekBarNormal= findViewById<SeekBar>(R.id.seekbar_Normal)
+        val seekBarNormal= findViewById<SeekBar>(R.id.seekbar_video)
         val seekBarDiscrete = findViewById<SeekBar>(R.id.seekbar_Discrete)
         val txtViewSeekBarNormal = findViewById<TextView>(R.id.textViewSeekBar)
         val txtViewSeekBarDiscrete = findViewById<TextView>(R.id.textViewSeekBarDiscrete)
