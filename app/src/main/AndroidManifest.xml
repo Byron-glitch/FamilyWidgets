@@ -12,10 +12,7 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.FamilyWidgets">
         <activity
-                android:name=".Activity_ten"
-                android:exported="true"/>
-        <activity
-                android:name=".Activity_nine"
+                android:name=".Activity_questions"
                 android:exported="true"/>
         <activity
                 android:name=".Activity_eight"

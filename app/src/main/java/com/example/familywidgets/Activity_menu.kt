@@ -1,11 +1,9 @@
 package com.example.familywidgets
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +20,7 @@ class Activity_menu : AppCompatActivity() {
         val btn_image_web = findViewById<ImageView>(R.id.img_web_view_image_view)
         val btn_calendar_progress = findViewById<ImageView>(R.id.img_calendar_progress)
         val btn_image_gallery = findViewById<ImageView>(R.id.btn_image_gallery)
-
+        val btn_frecuent_questions = findViewById<ImageView>(R.id.btn_frecuent_questions)
 
         btn_image_web.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -39,7 +37,10 @@ class Activity_menu : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        btn_frecuent_questions.setOnClickListener {
+            val intent = Intent(this, Activity_questions::class.java)
+            startActivity(intent)
+        }
 
         //-------------------------------------VIDEO VIEW--------------------------------------------
         val videoView = findViewById<VideoView>(R.id.videoView_menu)

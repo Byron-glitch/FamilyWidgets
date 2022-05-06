@@ -161,12 +161,6 @@ class Activity_eight : AppCompatActivity() {
             }
         }
 
-        val btnNext = findViewById<Button>(R.id.btnThirdNext)
-        btnNext.setOnClickListener {
-            val intent = Intent(this, Activity_nine::class.java)
-            startActivity(intent)
-        }
-
     }
 
 }
