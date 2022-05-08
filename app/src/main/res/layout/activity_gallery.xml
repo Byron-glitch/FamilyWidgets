@@ -11,6 +11,18 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="0.0"/>
+    <SeekBar
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="396dp"
+            android:layout_height="42dp"
+            android:max="2"
+            android:progress="0"
+            android:progressTint="#D10606"
+            android:id="@+id/seekBarDiscrete"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            android:layout_marginTop="124dp" app:layout_constraintBottom_toTopOf="@+id/img_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.566" app:layout_constraintEnd_toEndOf="parent"/>
     <ImageView
             android:layout_width="343dp"
             android:layout_height="415dp" tools:srcCompat="@tools:sample/backgrounds/scenic"
@@ -18,29 +30,31 @@
             android:foregroundGravity="center"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintVertical_bias="0.62"/>
     <ImageView
             android:layout_width="100dp"
             android:layout_height="89dp" app:srcCompat="@drawable/back_rojo" android:id="@+id/img_back_btn"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="36dp" android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp" android:layout_marginStart="16dp"
             app:layout_constraintEnd_toStartOf="@+id/img_next_btn" app:layout_constraintHorizontal_bias="0.11"/>
     <ImageView
             android:layout_width="100dp"
             android:layout_height="89dp" app:srcCompat="@drawable/front_rojo" android:id="@+id/img_next_btn"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="36dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"/>
+            android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"/>
     <ImageView
             android:layout_width="85dp"
             android:layout_height="86dp" app:srcCompat="@drawable/plus" android:id="@+id/btn_image_masTamano"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toEndOf="@+id/btn_image_menosTamano"
             app:layout_constraintHorizontal_bias="0.988" app:layout_constraintTop_toBottomOf="@+id/img_photo"
-            android:layout_marginTop="28dp"/>
+            android:layout_marginTop="30dp"/>
     <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp" app:srcCompat="@drawable/minus" android:id="@+id/btn_image_menosTamano"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintTop_toBottomOf="@+id/img_photo" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

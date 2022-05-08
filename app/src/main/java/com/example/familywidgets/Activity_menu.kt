@@ -21,6 +21,8 @@ class Activity_menu : AppCompatActivity() {
         val btn_calendar_progress = findViewById<ImageView>(R.id.img_calendar_progress)
         val btn_image_gallery = findViewById<ImageView>(R.id.btn_image_gallery)
         val btn_frecuent_questions = findViewById<ImageView>(R.id.btn_frecuent_questions)
+        val btn_sedes = findViewById<ImageView>(R.id.btn_sedes)
+        val btn_escinf = findViewById<ImageView>(R.id.btn_escinf)
 
         btn_image_web.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -39,6 +41,16 @@ class Activity_menu : AppCompatActivity() {
 
         btn_frecuent_questions.setOnClickListener {
             val intent = Intent(this, Activity_questions::class.java)
+            startActivity(intent)
+        }
+
+        btn_sedes.setOnClickListener {
+            val intent = Intent(this, Activity_sedes::class.java)
+            startActivity(intent)
+        }
+
+        btn_escinf.setOnClickListener {
+            val intent = Intent(this, Activity_escinf::class.java)
             startActivity(intent)
         }
 
